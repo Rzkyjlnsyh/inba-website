@@ -1,39 +1,80 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-brand-dark: #0B1F33;
-  --color-brand-surface: #2E2E2E;
-  --color-brand-primary: #1FA36B;
-  --color-brand-primaryHover: #168052;
-  --color-brand-light: #E6E9ED;
-  --color-brand-muted: #94A3B8;
-  --font-sans: 'Inter', sans-serif;
+  /* Brand Core Colors (TETAP KONSISTEN) */
+  --color-brand-navy: #0B1F33;
+  --color-brand-emerald: #1FA36B;
+  --color-brand-emerald-dark: #168052;
+  --color-brand-platinum: #E6E9ED;
+  --color-brand-charcoal: #2E2E2E;
 
-  --animate-blob: blob 7s infinite;
+  /* Semantic Colors (ADAPTIF) */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border-color);
+
+  --font-sans: 'Inter', sans-serif;
   
+  --animate-blob: blob 7s infinite;
+  --animate-fade-in-up: fadeInUp 0.5s ease-out forwards;
+
   @keyframes blob {
     0% { transform: translate(0px, 0px) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
     66% { transform: translate(-20px, 20px) scale(0.9); }
     100% { transform: translate(0px, 0px) scale(1); }
   }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 
-/* Custom Scrollbar Styles */
+/* Light Mode (Root Default) */
+:root {
+  --bg-primary: #F8FAFC; /* Sangat terang tapi tidak silau */
+  --bg-secondary: #FFFFFF; /* Untuk kartu */
+  --text-primary: #0B1F33; /* Teks Navy gelap agar terbaca jelas */
+  --text-secondary: #64748B; /* Slate 500 */
+  --border-color: #E2E8F0;
+  color-scheme: light;
+}
+
+/* Dark Mode Override */
+.dark {
+  --bg-primary: #0B1F33; /* Navy Inba */
+  --bg-secondary: #16243A; /* Navy yang sedikit lebih terang atau Charcoal #2E2E2E */
+  --text-primary: #E6E9ED; /* Platinum */
+  --text-secondary: #94A3B8;
+  --border-color: #2E2E2E; /* Charcoal Border */
+  color-scheme: dark;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-brand-dark);
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brand-surface);
+  background: var(--text-secondary);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-muted);
+  background: var(--color-brand-emerald);
 }
 
 body {
-  @apply bg-brand-dark text-brand-light;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
 }
