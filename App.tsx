@@ -8,6 +8,7 @@ import MentorProfile from './components/MentorProfile';
 import Testimonials from './components/Testimonials'; 
 import Pricing from './components/Pricing';
 import AiMarketAnalyst from './components/AiMarketAnalyst';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -37,6 +38,9 @@ const App: React.FC = () => {
         
         {/* Closing The Deal */}
         <Pricing />
+
+        {/* FAQ Section */}
+        <FAQ />
       </main>
       <Footer />
     </div>

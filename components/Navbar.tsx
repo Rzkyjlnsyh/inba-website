@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, GraduationCap } from 'lucide-react';
-import { NavItem } from '../types';
 import ThemeToggle from './ThemeToggle';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
 
 const navItems: NavItem[] = [
   { label: 'Beranda', href: '#home' },
@@ -21,8 +25,12 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-bg-primary/90 backdrop-blur-md shadow-lg border-b border-border-color' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-bg-primary/95 backdrop-blur-md shadow-lg border-b border-border-color' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
@@ -44,7 +52,7 @@ const Navbar: React.FC = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-text-secondary hover:text-brand-emerald px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-text-secondary hover:text-brand-emerald px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   {item.label}
                 </a>
@@ -63,7 +71,7 @@ const Navbar: React.FC = () => {
               <ThemeToggle />
               <a 
                 href="#pricing"
-                className="bg-brand-emerald hover:bg-brand-emerald-dark text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-brand-emerald/20 hover:shadow-brand-emerald/30 hover:-translate-y-0.5"
+                className="bg-brand-emerald hover:bg-brand-emerald-dark text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-brand-emerald/20 hover:shadow-brand-emerald/30 hover:-translate-y-0.5 active:scale-95"
               >
                 Join Now
               </a>
@@ -76,32 +84,46 @@ const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-text-secondary hover:text-brand-emerald focus:outline-none"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-bg-secondary border-b border-border-color shadow-xl">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-text-primary hover:text-brand-emerald block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-bg-secondary border-t border-border-color shadow-xl rounded-b-2xl">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={handleClick}
+              className="text-text-secondary hover:text-brand-emerald block px-3 py-2 rounded-md text-base font-medium"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="https://t.me/inbaofficial"
+            target="_blank" 
+            rel="noreferrer"
+            onClick={handleClick}
+            className="text-text-secondary hover:text-brand-emerald block px-3 py-2 rounded-md text-base font-medium"
+          >
+             Free Community
+          </a>
+          <div className="pt-4 pb-2 px-3">
+             <a 
+                href="#pricing"
+                onClick={handleClick}
+                className="block w-full text-center bg-brand-emerald hover:bg-brand-emerald-dark text-white px-5 py-3 rounded-xl font-bold transition-all shadow-md active:scale-95"
               >
-                {item.label}
+                Join Now
               </a>
-            ))}
-            <button className="w-full mt-4 bg-brand-emerald text-white px-5 py-3 rounded-lg font-bold">
-              Login Mahasiswa
-            </button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

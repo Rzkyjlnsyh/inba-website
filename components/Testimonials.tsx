@@ -4,24 +4,24 @@ import { Quote, Star } from 'lucide-react';
 const testimonials = [
   {
     name: "Andi Saputra",
-    role: "Alumni Batch 5",
-    profit: "+$2,400 / bulan",
-    quote: "Dulu saya sering MC (Margin Call) karena tidak punya trading plan. Setelah lulus dari Inba University, saya mengerti bahwa trading bukan soal tebak-tebakan, tapi probabilitas. Sekarang trading jadi sumber penghasilan utama saya.",
-    image: "https://picsum.photos/seed/andi/100/100"
+    role: "Mahasiswa & Swing Trader",
+    profit: "+15% Portfolio / Bulan",
+    quote: "Dulu saya asal beli saham gorengan dan sering nyangkut. Di Inba, saya diajarkan cara screener saham yang punya fundamental bagus tapi teknikalnya lagi diskon. Sekarang portofolio saya perlahan hijau konsisten.",
+    image: "https://picsum.photos/seed/indo1/100/100"
   },
   {
     name: "Sarah Wijaya",
-    role: "Alumni Batch 8",
-    profit: "ROI 45% (3 Bulan)",
-    quote: "Materi psikologi trading di sini benar-benar mengubah cara pandang saya. Mentornya sangat sabar membimbing dari nol sampai bisa profit konsisten. Sangat recommended untuk pemula.",
-    image: "https://picsum.photos/seed/sarah/100/100"
+    role: "Ibu Rumah Tangga",
+    profit: "Cuan BBCA & BBRI",
+    quote: "Saya cari investasi yang aman buat tabungan anak. Mentor menjelaskan dengan bahasa manusia, bukan bahasa robot. Sekarang saya bisa nabung saham Bluechip dengan tenang tanpa takut market crash.",
+    image: "https://picsum.photos/seed/indo2/100/100"
   },
   {
     name: "Budi Santoso",
-    role: "Alumni Batch 2",
-    profit: "Full Time Trader",
-    quote: "Investasi terbaik yang pernah saya lakukan. Biaya kuliahnya sebanding dengan ilmu 'daging' yang didapat. Komunitas kami juga sangat solid, saling bantu analisa setiap hari.",
-    image: "https://picsum.photos/seed/budi/100/100"
+    role: "Karyawan Swasta",
+    profit: "Income Tambahan",
+    quote: "Gaji UMR tapi pengen investasi? Bisa banget. Strategi 'Nabung Saham' yang diajarkan Inba sangat masuk akal. Gak perlu pantau chart tiap detik, cukup 15 menit sehari buat evaluasi.",
+    image: "https://picsum.photos/seed/indo3/100/100"
   }
 ];
 

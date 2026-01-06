@@ -57,9 +57,10 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-text-primary mb-4">Legal</h4>
+            <h4 className="font-bold text-text-primary mb-4">Legal Disclaimer</h4>
             <p className="text-xs text-text-secondary leading-relaxed">
-              Perdagangan saham dan aset kripto memiliki risiko tinggi. Kinerja masa lalu tidak menjamin hasil di masa depan. Berinvestasilah dengan bijak.
+              Investasi di Pasar Modal (Saham) mengandung risiko kerugian. Kinerja masa lalu tidak menjamin hasil di masa depan.
+              Seluruh keputusan investasi (Jual/Beli) sepenuhnya menjadi tanggung jawab pribadi investor (Do Your Own Research).
             </p>
             <p className="mt-4 text-xs text-text-secondary">
               © {new Date().getFullYear()} Inba University. All rights reserved.

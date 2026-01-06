@@ -31,8 +31,8 @@ const Hero: React.FC = () => {
             </h1>
             
             <p className="mt-6 text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Platform edukasi saham & kripto dengan pendekatan <i>Human-Centered</i>. 
-              Kami menggabungkan analisis institusional dengan psikologi trading praktis.
+              Platform edukasi <b>investasi saham</b> terbaik di Indonesia dengan pendekatan <i>Human-Centered</i>. 
+              Kuasai analisis Fundamental, Teknikal, dan Bandarmology untuk profit maksimal di IHSG.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
