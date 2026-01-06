@@ -32,16 +32,16 @@ const LearningPath: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-16 md:flex md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+            <h2 id="curriculum-heading" className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
               Kurikulum <span className="text-brand-emerald">Zero to Hero</span>
             </h2>
             <p className="text-lg text-text-secondary">
               Kami tidak mengajarkan "tips trik ajaib". Ini adalah silabus akademis yang disusun untuk mencetak trader profesional.
             </p>
           </div>
-          <button className="hidden md:inline-flex mt-6 md:mt-0 px-6 py-3 border border-brand-emerald text-brand-emerald rounded-xl font-medium hover:bg-brand-emerald hover:text-white transition-colors cursor-pointer">
+          <a href="#curriculum" className="hidden md:inline-flex mt-6 md:mt-0 px-6 py-3 border border-brand-emerald text-brand-emerald rounded-xl font-medium hover:bg-brand-emerald hover:text-white transition-colors focus:ring-2 focus:ring-brand-emerald focus:ring-offset-2">
             Lihat Detail Silabus
-          </button>
+          </a>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
@@ -66,9 +66,9 @@ const LearningPath: React.FC = () => {
         </div>
         
         <div className="mt-8 md:hidden text-center">
-            <button className="px-6 py-3 border border-brand-emerald text-brand-emerald rounded-xl font-medium hover:bg-brand-emerald hover:text-white transition-colors w-full">
+            <a href="#curriculum" className="px-6 py-3 border border-brand-emerald text-brand-emerald rounded-xl font-medium hover:bg-brand-emerald hover:text-white transition-colors w-full block text-center focus:ring-2 focus:ring-brand-emerald focus:ring-offset-2">
             Lihat Detail Silabus
-          </button>
+          </a>
         </div>
       </div>
     </section>

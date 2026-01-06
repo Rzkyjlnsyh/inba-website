@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-text-primary tracking-tight leading-[1.1] mb-6">
               Unlock Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-emerald to-emerald-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-emerald to-emerald-400">
                 Trading Potential
               </span>
             </h1>
@@ -40,15 +40,15 @@ const Hero: React.FC = () => {
                 Gabung Komunitas Gratis
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-              <button className="flex items-center justify-center px-8 py-4 border border-border-color text-base font-medium rounded-full text-text-secondary bg-transparent hover:bg-bg-secondary hover:text-text-primary transition-all">
+              <a href="#curriculum" className="flex items-center justify-center px-8 py-4 border border-border-color text-base font-medium rounded-full text-text-secondary bg-transparent hover:bg-bg-secondary hover:text-text-primary transition-all focus:ring-2 focus:ring-brand-emerald focus:ring-offset-2">
                 Lihat Program Kelas
-              </button>
+              </a>
             </div>
 
             <div className="flex items-center justify-center lg:justify-start gap-8 pt-8 border-t border-border-color">
               <div className="flex -space-x-3">
                  {[1,2,3,4].map((i) => (
-                   <img key={i} className="w-10 h-10 rounded-full border-2 border-bg-primary" src={`https://picsum.photos/seed/${i}/100`} alt="Avatar" />
+                   <img key={i} className="w-10 h-10 rounded-full border-2 border-bg-primary" src={`https://picsum.photos/seed/${i}/100`} alt={`Inba University alumni member ${i}`} loading="lazy" />
                  ))}
                  <div className="w-10 h-10 rounded-full border-2 border-bg-primary bg-bg-secondary flex items-center justify-center text-xs font-bold text-text-primary">
                    5k+
@@ -70,15 +70,16 @@ const Hero: React.FC = () => {
           {/* Right Content (Visual Authority) */}
           <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
              {/* Main Image Frame (Minimalist Border) */}
-             <div className="relative z-10 bg-gradient-to-b from-bg-secondary to-bg-primary rounded-3xl p-2 shadow-2xl border border-border-color transform rotate-2 hover:rotate-0 transition-duration-500">
+             <div className="relative z-10 bg-linear-to-b from-bg-secondary to-bg-primary rounded-3xl p-2 shadow-2xl border border-border-color transform rotate-2 hover:rotate-0 transition-duration-500">
                 <div className="rounded-2xl overflow-hidden relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
                   <img 
                     src="https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                    alt="Professional Mentor" 
+                    alt="Professional trading mentor analyzing market data and stock charts" 
                     className="w-full h-full object-cover"
+                    loading="eager"
                   />
                   {/* Overlay Gradient at bottom matching bg-primary */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent opacity-90"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-bg-primary via-transparent to-transparent opacity-90"></div>
                   
                   {/* Float Card: Profit */}
                   <div className="absolute bottom-6 left-6 right-6">

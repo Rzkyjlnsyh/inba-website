@@ -39,7 +39,7 @@ const Testimonials: React.FC = () => {
             <Star className="w-4 h-4 fill-current" />
             <span>Kisah Sukses Alumni</span>
           </div>
-          <h2 className="text-3xl font-bold text-text-primary mb-4">Bukti Nyata Inba University</h2>
+          <h2 id="testimonials-heading" className="text-3xl font-bold text-text-primary mb-4">Bukti Nyata Inba University</h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Ribuan siswa telah mengubah nasib finansial mereka melalui metode pendidikan kami. Inilah cerita mereka.
           </p>

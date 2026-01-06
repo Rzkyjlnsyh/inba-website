@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/icon.png" />
+    
+    <!-- Performance: Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://picsum.photos" />
+    
     <title>
-      Inba University | Professional Market Intelligence & Stock Education
+      Inba University | Professional Market Intelligence &amp; Stock Education
     </title>
     <meta
       name="description"
@@ -21,7 +28,7 @@
     />
     <meta
       property="og:description"
-      content="Stock education & market intelligence untuk membangun portofolio yang lebih cerdas dan terukur."
+      content="Stock education &amp; market intelligence untuk membangun portofolio yang lebih cerdas dan terukur."
     />
     <meta property="og:image" content="/og-image.jpeg" />
     <meta property="og:url" content="https://inbauniversity.com/" />
@@ -45,7 +52,7 @@
         "name": "Inba University",
         "url": "https://inbauniversity.com",
         "logo": "https://inbauniversity.com/icon.png",
-        "description": "Professional Market Intelligence & Stock Education Platform in Indonesia.",
+        "description": "Professional Market Intelligence &amp; Stock Education Platform in Indonesia.",
         "sameAs": [
           "https://www.instagram.com/inbauniversity",
           "https://t.me/inbaofficial",
@@ -59,10 +66,19 @@
       }
     </script>
     
+    <!-- Preload Critical Font -->
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

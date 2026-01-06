@@ -37,28 +37,47 @@ const features: FeatureProps[] = [
 
 const Features: React.FC = () => {
   return (
-    <section id="curriculum" className="py-24 bg-slate-900 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-24 bg-bg-secondary relative overflow-hidden transition-colors duration-300">
+      {/* Background Pattern - Subtle */}
+      <div className="absolute top-0 left-0 w-1/2 h-full bg-brand-navy/5 -skew-x-12 -translate-x-1/4 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-brand-gold font-semibold tracking-wide uppercase text-sm">Metode Pembelajaran</h2>
-          <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-base text-brand-emerald font-semibold tracking-wide uppercase mb-2">Metode Pembelajaran</h2>
+          <h3 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
             Kurikulum Komprehensif
           </h3>
-          <p className="mt-4 max-w-2xl text-xl text-slate-400 mx-auto">
+          <p className="mt-4 max-w-2xl text-lg text-text-secondary mx-auto">
             Kami tidak hanya memberikan ikan, kami memberikan kail dan mengajarkan cara memancing di lautan pasar global bersama Inba University.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="relative group p-8 bg-slate-800 rounded-2xl border border-slate-700 hover:border-brand-gold/50 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-gold/5 hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
-              <div className="relative">
-                <div className="w-12 h-12 bg-brand-900 rounded-lg flex items-center justify-center mb-6 border border-brand-gold/30 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="h-6 w-6 text-brand-gold" />
+            <div 
+              key={index}
+              className="relative group p-8 bg-bg-primary rounded-2xl border border-border-color hover:border-brand-emerald/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-brand-emerald focus-within:ring-offset-2"
+              tabIndex={0}
+              role="article"
+              aria-labelledby={`feature-title-${index}`}
+            >
+              <div className="absolute inset-0 bg-linear-to-br from-brand-emerald/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div 
+                  className="w-14 h-14 bg-bg-secondary rounded-2xl flex items-center justify-center mb-6 border border-brand-emerald/30 shadow-sm group-hover:scale-110 transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <feature.icon className="h-7 w-7 text-brand-emerald" />
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">{feature.title}</h4>
-                <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+                <h4 
+                  id={`feature-title-${index}`}
+                  className="text-xl font-bold text-text-primary mb-3"
+                >
+                  {feature.title}
+                </h4>
+                <p className="text-text-secondary leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}

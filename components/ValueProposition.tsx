@@ -36,7 +36,7 @@ const ValueProposition: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="group relative p-8 bg-bg-secondary rounded-3xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-border-color hover:border-brand-emerald/50">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-emerald/5 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-brand-emerald/5 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity"></div>
               <div className="relative z-10">
                 <div className="w-14 h-14 bg-bg-primary rounded-2xl flex items-center justify-center mb-6 text-brand-emerald shadow-sm group-hover:scale-110 transition-transform">
                   <benefit.icon className="w-7 h-7" />
