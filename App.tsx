@@ -2,9 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Wawasan from './pages/Wawasan';
-import MindsetSahamVsJudi from './pages/articles/MindsetSahamVsJudi';
-import JebakanInvestorDadakan from './pages/articles/JebakanInvestorDadakan';
-import BahayaSahamGorengan from './pages/articles/BahayaSahamGorengan';
+import ArticleDetail from './pages/ArticleDetail';
 
 const App: React.FC = () => {
   return (
@@ -12,9 +10,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/wawasan" element={<Wawasan />} />
-        <Route path="/wawasan/mindset-saham-judi" element={<MindsetSahamVsJudi />} />
-        <Route path="/wawasan/jebakan-investor-dadakan" element={<JebakanInvestorDadakan />} />
-        <Route path="/wawasan/bahaya-saham-gorengan" element={<BahayaSahamGorengan />} />
+        <Route path="/wawasan/:slug" element={<ArticleDetail />} />
       </Routes>
     </Router>
   );

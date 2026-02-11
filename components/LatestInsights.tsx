@@ -2,38 +2,28 @@ import React from 'react';
 import { ArrowRight, BookOpen, TrendingUp, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const articles = [
-  {
-    title: "Jangan Anggap Saham Itu Judi",
-    excerpt: "Banyak trader boncos karena salah mindset. Pelajari bedanya bisnis trading dengan perjudian agar modal Anda selamat.",
-    category: "Psikologi",
-    date: "9 Jan 2026",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    slug: "/wawasan/mindset-saham-judi",
-    icon: BookOpen,
-    color: "text-blue-500 bg-blue-500/10"
-  },
-  {
-    title: "Jebakan 'Investor Dadakan'",
-    excerpt: "Pagi scalping, sore nyangkut terus ngaku investor? Awas, ini penyakit paling mematikan bagi portofolio pemula.",
-    category: "Strategi",
-    date: "8 Jan 2026",
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    slug: "/wawasan/jebakan-investor-dadakan",
-    icon: TrendingUp,
-    color: "text-green-500 bg-green-500/10"
-  },
-  {
-    title: "Bahaya Saham Gorengan & Isu Liar",
-    excerpt: "Saham tidur tiba-tiba bangun? Hati-hati jebakan Batman. Kenali ciri-ciri Pump & Dump sebelum Anda FOMO.",
-    category: "Bandarmology",
-    date: "7 Jan 2026",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    slug: "/wawasan/bahaya-saham-gorengan",
-    icon: AlertTriangle,
-    color: "text-red-500 bg-red-500/10"
-  }
-];
+import matter from 'gray-matter';
+
+// Dynamic loading of articles
+const articleFiles = import.meta.glob('../content/articles/*.md', { as: 'raw', eager: true });
+
+const articles = Object.entries(articleFiles).map(([path, content]) => {
+  const { data } = matter(content as string);
+  const slug = path.split('/').pop()?.replace('.md', '') || '';
+
+  return {
+    title: data.title,
+    excerpt: data.excerpt,
+    category: data.category,
+    date: data.date,
+    image: data.image,
+    slug: `/wawasan/${slug}`,
+    icon: TrendingUp, // Default icon or map from data
+    color: data.category === 'Psikologi' ? 'text-blue-500 bg-blue-500/10' :
+      data.category === 'Strategi' ? 'text-green-500 bg-green-500/10' :
+        'text-red-500 bg-red-500/10'
+  };
+}).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
 
 const LatestInsights: React.FC = () => {
   return (
