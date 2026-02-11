@@ -6,8 +6,8 @@
 
 session_start();
 
-// Configuration - Values will be filled after user provides Client ID
-$client_id = "YOUR_CLIENT_ID"; 
+// Configuration
+$client_id = "Ov23liu2Vn9u3h9MFiRe"; 
 $redirect_uri = "https://inbauniversity.com/admin/callback.php";
 $scope = "repo,user";
 $state = bin2hex(random_bytes(16));

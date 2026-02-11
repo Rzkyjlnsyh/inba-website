@@ -6,8 +6,8 @@
 
 session_start();
 
-$client_id = "YOUR_CLIENT_ID";
-$client_secret = "YOUR_CLIENT_SECRET";
+$client_id = "Ov23liu2Vn9u3h9MFiRe";
+$client_secret = "661df1c071c2d8fb58f349bd730508539375e5f7";
 
 $code = $_GET['code'] ?? null;
 $state = $_GET['state'] ?? null;
