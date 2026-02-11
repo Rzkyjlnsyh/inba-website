@@ -1,11 +1,12 @@
 ---
 title: "Saham Bangun dari Kubur: Isu Akuisisi NASA Atau Jebakan Bandar?"
-category: "Bandarmology"
-date: "7 Jan 2026"
-image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-readTime: "6 min read"
-excerpt: "Pernah dengar saham tidur di harga 50 perak tiba-tiba loncat ke 200 hanya dalam seminggu? Rumornya gila-gilaan!"
-author: "Rizky Ahmad (Head Mentor)"
+category: Bandarmology
+date: 7 Jan 2026
+image: https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80
+readTime: 6 min read
+author: Admin Inba University
+excerpt: Pernah dengar saham tidur di harga 50 perak tiba-tiba loncat ke 200
+  hanya dalam seminggu? Rumornya gila-gilaan!
 ---
 
 "Pernah dengar saham tidur di harga 50 perak tiba-tiba loncat ke 200 hanya dalam seminggu? Rumornya gila-gilaan: mau diakuisisi perusahaan multinasional, mau sponsor MotoGP, atau bahkan isunya mau dibeli Elon Musk? 😂"
