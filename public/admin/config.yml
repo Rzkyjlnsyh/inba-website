@@ -2,6 +2,7 @@ backend:
   name: github
   repo: Rzkyjlnsyh/inba-website
   branch: main
+  local_backend: true
 
 media_folder: "public/images/articles"
 public_folder: "/images/articles"

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import matter from 'gray-matter';
 
 // Dynamic loading of all articles
-const articleFiles = import.meta.glob('../content/articles/*.md', { as: 'raw', eager: true });
+const articleFiles = import.meta.glob('../src/content/articles/*.md', { as: 'raw', eager: true });
 
 const articles = Object.entries(articleFiles).map(([path, content]) => {
     const { data } = matter(content as string);

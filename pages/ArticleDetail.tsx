@@ -8,7 +8,7 @@ import ArticleLayout from '../components/layout/ArticleLayout';
 import { ProTip, WarningBox, KeyTakeaway } from '../components/ArticleElements';
 
 // Vite helper to load all markdown files
-const articleFiles = import.meta.glob('../content/articles/*.md', { as: 'raw', eager: true });
+const articleFiles = import.meta.glob('../src/content/articles/*.md', { as: 'raw', eager: true });
 
 const ArticleDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -19,7 +19,7 @@ const ArticleDetail: React.FC = () => {
     useEffect(() => {
         const loadArticle = async () => {
             try {
-                const filePath = `../content/articles/${slug}.md`;
+                const filePath = `../src/content/articles/${slug}.md`;
                 const rawContent = articleFiles[filePath];
 
                 if (!rawContent) {
