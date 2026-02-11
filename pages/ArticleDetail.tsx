@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import matter from 'gray-matter';
 import { Lightbulb, AlertTriangle, ArrowLeft, Clock, User, Calendar, Tag } from 'lucide-react';
 import ArticleLayout from '../components/layout/ArticleLayout';
 import { ProTip, WarningBox, KeyTakeaway } from '../components/ArticleElements';
@@ -27,7 +26,22 @@ const ArticleDetail: React.FC = () => {
                     return;
                 }
 
-                const { data: frontmatter, content: markdownBody } = matter(rawContent as string);
+                const text = rawContent as string;
+                const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+                const frontmatter: any = {};
+                let markdownBody = text;
+
+                if (match) {
+                    const yaml = match[1];
+                    yaml.split('\n').forEach(line => {
+                        const [key, ...val] = line.split(':');
+                        if (key && val.length > 0) {
+                            frontmatter[key.trim()] = val.join(':').trim().replace(/^["']|["']$/g, '');
+                        }
+                    });
+                    markdownBody = text.replace(match[0], '').trim();
+                }
+
                 setData(frontmatter);
                 setContent(markdownBody);
                 window.scrollTo(0, 0);

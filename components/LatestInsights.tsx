@@ -2,30 +2,51 @@ import React from 'react';
 import { ArrowRight, BookOpen, TrendingUp, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import matter from 'gray-matter';
-
 // Dynamic loading of articles
 const articleFiles = import.meta.glob('../src/content/articles/*.md', { as: 'raw', eager: true });
 
-const articles = Object.entries(articleFiles).map(([path, content]) => {
-  const { data } = matter(content as string);
-  const slug = path.split('/').pop()?.replace('.md', '') || '';
-
-  return {
-    title: data.title,
-    excerpt: data.excerpt,
-    category: data.category,
-    date: data.date,
-    image: data.image,
-    slug: `/wawasan/${slug}`,
-    icon: TrendingUp, // Default icon or map from data
-    color: data.category === 'Psikologi' ? 'text-blue-500 bg-blue-500/10' :
-      data.category === 'Strategi' ? 'text-green-500 bg-green-500/10' :
-        'text-red-500 bg-red-500/10'
-  };
-}).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
-
 const LatestInsights: React.FC = () => {
+  const articles = React.useMemo(() => {
+    return Object.entries(articleFiles).map(([path, content]) => {
+      try {
+        const text = content as string;
+        const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+        const data: any = {};
+
+        if (match) {
+          const yaml = match[1];
+          yaml.split('\n').forEach(line => {
+            const [key, ...val] = line.split(':');
+            if (key && val.length > 0) {
+              data[key.trim()] = val.join(':').trim().replace(/^["']|["']$/g, '');
+            }
+          });
+        }
+
+        const slug = path.split('/').pop()?.replace('.md', '') || '';
+
+        return {
+          title: data.title || 'Untitled',
+          excerpt: data.excerpt || '',
+          category: data.category || 'General',
+          date: data.date || '',
+          image: data.image || '',
+          slug: `/wawasan/${slug}`,
+          icon: TrendingUp,
+          color: data.category === 'Psikologi' ? 'text-blue-500 bg-blue-500/10' :
+            data.category === 'Strategi' ? 'text-green-500 bg-green-500/10' :
+              'text-red-500 bg-red-500/10'
+        };
+      } catch (err) {
+        console.error('Error parsing article:', path, err);
+        return null;
+      }
+    })
+      .filter((a): a is any => a !== null)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 3);
+  }, []);
+
   return (
     <section id="updates" className="py-24 bg-bg-primary transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
