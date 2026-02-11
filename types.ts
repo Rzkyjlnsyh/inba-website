@@ -24,3 +24,10 @@ export interface ChartDataPoint {
   portfolio: number;
   market: number;
 }
+
+export interface TestimonialProps {
+  name: string;
+  role: string;
+  profit: string;
+  quote: string;
+}

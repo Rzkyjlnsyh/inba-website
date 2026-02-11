@@ -14,7 +14,7 @@ const steps = [
   {
     num: "03",
     title: "Risk Management",
-    desc: "Seni melindungi modal. Bagaimana cara mengatur lot size agar akun Anda anti-MC (Margin Call) meskipun salah prediksi."
+    desc: "Seni melindungi modal. Strategi Money Management disiplin untuk menjaga psikologi dan pertumbuhan portofolio yang sehat jangka panjang."
   },
   {
     num: "04",

@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
               'react-vendor': ['react', 'react-dom'],
               'lucide-icons': ['lucide-react'],
               // AI SDK in separate chunk (lazy loaded anyway)
-              'ai-sdk': ['@google/genai'],
+              'ai-sdk': ['@google/generative-ai'],
             },
             // Better chunk naming for caching
             chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -54,7 +54,7 @@ export default defineConfig(({ mode }) => {
       optimizeDeps: {
         include: ['react', 'react-dom', 'lucide-react'],
         // Exclude heavy AI SDK from initial optimization
-        exclude: ['@google/genai'],
+        exclude: ['@google/generative-ai'],
       },
     };
 });

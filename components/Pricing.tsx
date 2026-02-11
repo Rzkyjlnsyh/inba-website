@@ -35,7 +35,7 @@ const Pricing: React.FC = () => {
               <span className="text-text-secondary text-sm">/ bulan</span>
             </div>
             
-            <div className="flex-grow">
+            <div className="grow">
                <ul className="space-y-4 mb-8">
                  {commonFeatures.map((item) => (
                    <li key={item} className="flex items-start gap-3 text-text-secondary text-sm">
@@ -67,7 +67,7 @@ const Pricing: React.FC = () => {
               <span className="text-text-secondary text-sm">/ 3 bulan</span>
             </div>
 
-            <div className="flex-grow">
+            <div className="grow">
                <ul className="space-y-4 mb-8">
                  {commonFeatures.map((item) => (
                    <li key={item} className="flex items-start gap-3 text-text-primary font-medium text-sm">
@@ -99,7 +99,7 @@ const Pricing: React.FC = () => {
               <span className="text-text-secondary text-sm">/ tahun</span>
             </div>
             
-            <div className="flex-grow">
+            <div className="grow">
                <ul className="space-y-4 mb-8">
                  {commonFeatures.map((item) => (
                    <li key={item} className="flex items-start gap-3 text-text-secondary text-sm">

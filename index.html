@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="theme-color" content="#0B1F33" />
+    
+    <!-- Google Analytics (GA4) -->
+    <!-- GANTI 'G-XXXXXXXXXX' DENGAN ID GOOGLE ANALYTICS ANDA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0D4MP3R4N1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0D4MP3R4N1');
+    </script>
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="ze7h4_nZA73pDmpn1BoMPvDG1dppAQtL3GdAx8XPywg" />
+
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo/icon-inba.png" />
+    <link rel="apple-touch-icon" href="/images/logo/icon-inba.png" />
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Performance: Preconnect to external origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -12,23 +31,23 @@
     <link rel="dns-prefetch" href="https://picsum.photos" />
     
     <title>
-      Inba University | Professional Market Intelligence &amp; Stock Education
+      Belajar Saham & Trading Dari Nol - Inba University
     </title>
     <meta
       name="description"
-      content="Professional market intelligence dan edukasi saham untuk investor pemula hingga profesional. Bimbingan trading, analisis pasar, dan manajemen risiko."
+      content="Komunitas belajar saham terbaik untuk pemula. Pelajari analisis teknikal, bandarmologi, dan psikologi trading. Daftar sekarang!"
     />
     <meta
       name="keywords"
-      content="belajar saham, sekolah pasar modal, kursus trading saham, investasi saham pemula, analisa teknikal, bandarmology, inba university"
+      content="belajar saham, kursus trading, inba university, komunitas saham, analisa saham, saham pemula"
     />
     <meta
       property="og:title"
-      content="Inba University - Professional Market Intelligence"
+      content="Belajar Saham & Trading Dari Nol - Inba University"
     />
     <meta
       property="og:description"
-      content="Stock education &amp; market intelligence untuk membangun portofolio yang lebih cerdas dan terukur."
+      content="Komunitas belajar saham terbaik untuk pemula. Pelajari analisis teknikal, bandarmologi, dan psikologi trading."
     />
     <meta property="og:image" content="/og-image.jpeg" />
     <meta property="og:url" content="https://inbauniversity.com/" />
@@ -36,8 +55,8 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Inba University | Professional Market Intelligence" />
-    <meta name="twitter:description" content="Edukasi saham profesional untuk investor cerdas. Analisis pasar, bimbingan trading, dan strategi investasi." />
+    <meta name="twitter:title" content="Inba University | Belajar Saham Dari Nol" />
+    <meta name="twitter:description" content="Komunitas belajar saham terbaik untuk pemula." />
     <meta name="twitter:image" content="/og-image.jpeg" />
 
     <!-- Technical SEO -->
@@ -45,25 +64,60 @@
     <meta name="robots" content="index, follow" />
     
     <!-- Structured Data (JSON-LD) -->
+    <!-- SEO Schema Markup -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "Inba University",
-        "url": "https://inbauniversity.com",
-        "logo": "https://inbauniversity.com/icon.png",
-        "description": "Professional Market Intelligence &amp; Stock Education Platform in Indonesia.",
-        "sameAs": [
-          "https://www.instagram.com/inbauniversity",
-          "https://t.me/inbaofficial",
-          "https://www.tiktok.com/@inbauniversity",
-          "https://www.youtube.com/@inbauniversity"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "ID"
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://inbauniversity.com/#organization",
+          "name": "Inba University",
+          "url": "https://inbauniversity.com",
+          "logo": "https://inbauniversity.com/images/logo/logo-light.png",
+          "sameAs": [
+            "https://www.instagram.com/inbauniversity/",
+            "https://www.youtube.com/channel/UCneI4ch5gRpEWRb0lkF_icw",
+            "https://www.tiktok.com/@inbauniversity"
+          ],
+          "description": "Platform belajar saham dan trading terbaik untuk pemula hingga profesional."
+        },
+        {
+          "@type": "Course",
+          "@id": "https://inbauniversity.com/#course",
+          "name": "Inba Trading Mastery",
+          "description": "Program mentoring intensif belajar saham dari nol hingga mahir dengan strategi scalping, swing, dan investasi.",
+          "provider": {
+            "@id": "https://inbauniversity.com/#organization"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Paid",
+            "priceCurrency": "IDR",
+            "price": "500000",
+            "availability": "https://schema.org/InStock",
+            "url": "https://inbauniversity.com/#pricing"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "128",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://inbauniversity.com/#website",
+          "url": "https://inbauniversity.com",
+          "name": "Inba University",
+          "description": "Belajar Trading & Investasi Saham Pemula",
+          "publisher": {
+            "@id": "https://inbauniversity.com/#organization"
+          }
         }
-      }
+      ]
+    }
     </script>
     
     <!-- Preload Critical Font -->

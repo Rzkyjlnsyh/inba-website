@@ -1,27 +1,25 @@
 import React from 'react';
 import { Quote, Star } from 'lucide-react';
+import Avatar from './Avatar';
 
 const testimonials = [
   {
-    name: "Andi Saputra",
+    name: "Rizky A.",
     role: "Mahasiswa & Swing Trader",
-    profit: "+15% Portfolio / Bulan",
-    quote: "Dulu saya asal beli saham gorengan dan sering nyangkut. Di Inba, saya diajarkan cara screener saham yang punya fundamental bagus tapi teknikalnya lagi diskon. Sekarang portofolio saya perlahan hijau konsisten.",
-    image: "https://picsum.photos/seed/indo1/100/100"
+    profit: "Konsisten Profit",
+    quote: "Dulu saya asal beli saham tanpa analisa. Di Inba, saya diajarkan cara screening saham yang baik. Sekarang lebih terstruktur dan tidak asal entry."
   },
   {
-    name: "Sarah Wijaya",
+    name: "Siti W.",
     role: "Ibu Rumah Tangga",
-    profit: "Cuan BBCA & BBRI",
-    quote: "Saya cari investasi yang aman buat tabungan anak. Mentor menjelaskan dengan bahasa manusia, bukan bahasa robot. Sekarang saya bisa nabung saham Bluechip dengan tenang tanpa takut market crash.",
-    image: "https://picsum.photos/seed/indo2/100/100"
+    profit: "Investasi Jangka Panjang",
+    quote: "Saya belajar investasi saham untuk masa depan anak. Mentor menjelaskan dengan bahasa yang mudah dipahami. Sekarang lebih percaya diri untuk invest."
   },
   {
-    name: "Budi Santoso",
+    name: "Budi P.",
     role: "Karyawan Swasta",
     profit: "Income Tambahan",
-    quote: "Gaji UMR tapi pengen investasi? Bisa banget. Strategi 'Nabung Saham' yang diajarkan Inba sangat masuk akal. Gak perlu pantau chart tiap detik, cukup 15 menit sehari buat evaluasi.",
-    image: "https://picsum.photos/seed/indo3/100/100"
+    quote: "Dengan modal kecil tetap bisa mulai investasi. Strategi yang diajarkan praktis dan bisa diterapkan sambil kerja. Sangat membantu."
   }
 ];
 
@@ -50,9 +48,7 @@ const Testimonials: React.FC = () => {
             <div key={index} className="bg-bg-primary p-8 rounded-2xl border border-border-color hover:border-brand-emerald/50 transition-all duration-300 hover:shadow-xl group relative">
               
               <div className="flex items-center gap-4 mb-6 relative z-10">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-emerald/30">
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                </div>
+                <Avatar name={item.name} size="lg" className="border-2 border-brand-emerald/30" />
                 <div>
                   <h4 className="text-text-primary font-bold">{item.name}</h4>
                   <span className="text-text-secondary text-sm block">{item.role}</span>

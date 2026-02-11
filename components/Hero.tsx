@@ -1,13 +1,16 @@
 import React from 'react';
 import { ArrowRight, Star } from 'lucide-react';
+import Avatar from './Avatar';
 
 const Hero: React.FC = () => {
   return (
     <section id="home" className="relative pt-32 pb-12 lg:pt-48 lg:pb-20 overflow-hidden bg-bg-primary transition-colors duration-300">
-      {/* Background Glows (Adjusted for Light/Dark) */}
+      {/* Background Glows (Aurora Effect) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-emerald/10 rounded-full blur-[100px] opacity-60"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-navy/5 rounded-full blur-[100px] opacity-40"></div>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-emerald/20 rounded-full blur-[120px] opacity-60 animate-pulse duration-10000"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-navy/10 rounded-full blur-[120px] opacity-40 animate-bounce duration-[15000ms]"></div>
+        {/* New Third Element for depth */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-emerald/5 rounded-full blur-[150px] opacity-30"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -20,13 +23,13 @@ const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-emerald"></span>
               </span>
-              Professional Market Intelligence
+              Inba University
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-text-primary tracking-tight leading-[1.1] mb-6">
-              Unlock Your <br />
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-text-primary tracking-tight leading-[1.1] mb-6">
+              Professional Market Intelligence <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-emerald to-emerald-400">
-                Trading Potential
+                Stock Education
               </span>
             </h1>
             
@@ -47,11 +50,13 @@ const Hero: React.FC = () => {
 
             <div className="flex items-center justify-center lg:justify-start gap-8 pt-8 border-t border-border-color">
               <div className="flex -space-x-3">
-                 {[1,2,3,4].map((i) => (
-                   <img key={i} className="w-10 h-10 rounded-full border-2 border-bg-primary" src={`https://picsum.photos/seed/${i}/100`} alt={`Inba University alumni member ${i}`} loading="lazy" />
+                 {['Rizky Ahmad', 'Sarah Lestari', 'Budi Pratama', 'Dewi Kusuma'].map((name, i) => (
+                   <div key={i} className="border-2 border-bg-primary rounded-full">
+                     <Avatar name={name} size="md" />
+                   </div>
                  ))}
                  <div className="w-10 h-10 rounded-full border-2 border-bg-primary bg-bg-secondary flex items-center justify-center text-xs font-bold text-text-primary">
-                   5k+
+                   100+
                  </div>
               </div>
               <div className="text-left">
@@ -62,7 +67,7 @@ const Hero: React.FC = () => {
                   <Star className="w-4 h-4 fill-current" />
                   <Star className="w-4 h-4 fill-current" />
                 </div>
-                <p className="text-sm text-text-secondary">Dipercaya 5.000+ Alumni</p>
+                <p className="text-sm text-text-secondary">Bergabung dengan 100+ Alumni Aktif</p>
               </div>
             </div>
           </div>
@@ -77,18 +82,25 @@ const Hero: React.FC = () => {
                     alt="Professional trading mentor analyzing market data and stock charts" 
                     className="w-full h-full object-cover"
                     loading="eager"
+                    width="800"
+                    height="1000"
                   />
                   {/* Overlay Gradient at bottom matching bg-primary */}
                   <div className="absolute inset-0 bg-linear-to-t from-bg-primary via-transparent to-transparent opacity-90"></div>
                   
-                  {/* Float Card: Profit */}
+                  {/* Float Card: Success Stories */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="bg-bg-secondary/90 backdrop-blur-md p-4 rounded-xl border border-border-color shadow-lg">
-                      <div className="flex items-center justify-between mb-2">
-                         <span className="text-sm text-text-secondary">Total Profit (Bulan Ini)</span>
-                         <span className="text-brand-emerald bg-brand-emerald/10 px-2 py-0.5 rounded text-xs font-bold">+128%</span>
+                      <div className="flex items-center gap-3 mb-2">
+                         <div className="flex -space-x-2">
+                           <Avatar name="Ahmad" size="sm" className="border-2 border-bg-secondary" />
+                           <Avatar name="Siti" size="sm" className="border-2 border-bg-secondary" />
+                           <Avatar name="Joko" size="sm" className="border-2 border-bg-secondary" />
+                         </div>
+                         <span className="text-brand-emerald bg-brand-emerald/10 px-2 py-0.5 rounded text-xs font-bold">Konsisten Profit</span>
                       </div>
-                      <div className="text-2xl font-bold text-text-primary">Rp 485.000.000</div>
+                      <div className="text-sm font-semibold text-text-primary">Alumni Berhasil Mencapai Target</div>
+                      <div className="text-xs text-text-secondary mt-1">Dengan strategi terukur & risk management</div>
                     </div>
                   </div>
                 </div>
