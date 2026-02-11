@@ -2,6 +2,9 @@ backend:
   name: github
   repo: Rzkyjlnsyh/inba-website
   branch: main
+  base_url: https://inbauniversity.com
+  auth_endpoint: admin/auth.php
+  proxy_url: http://localhost:8081/api/v1
   local_backend: true
 
 media_folder: "public/images/articles"
